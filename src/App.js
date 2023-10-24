@@ -1,3 +1,4 @@
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
@@ -28,9 +29,14 @@ const App = () => {
     },
   ];
 
+  const handleAddExpense = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   return (
     <div>
-      <h2>😊 Expense Tracer ver.1.0.1.</h2>
+      <NewExpense onAddExpense={handleAddExpense} />
       <Expenses items={expenses} />
     </div>
   );
